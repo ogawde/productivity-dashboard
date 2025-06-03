@@ -1,7 +1,22 @@
+import { useContext } from "react";
+import Dashboard from "./components/Dashboard";
+import { ThemeContext, ThemeProvider } from "./contexts/ThemeContext";
+
+function PageLayout() {
+  const { theme } = useContext(ThemeContext);
+  return (
+    <div className={theme}>
+      <Dashboard />
+    </div>
+  );
+}
+
 function App() {
   return (
     <>
-     <h1>Hello World</h1>
+      <ThemeProvider>
+        <PageLayout />
+      </ThemeProvider>
     </>
   );
 }
