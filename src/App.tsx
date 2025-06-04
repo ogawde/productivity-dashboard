@@ -5,7 +5,7 @@ import { ThemeContext, ThemeProvider } from "./contexts/ThemeContext";
 function PageLayout() {
   const { theme } = useContext(ThemeContext);
   return (
-    <div className={theme}>
+    <div className={`${theme} ${theme === 'dark' ? 'dark' : ''}`}>
       <Dashboard />
     </div>
   );

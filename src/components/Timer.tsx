@@ -55,63 +55,61 @@ function Timer() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
-      <div className="bg-white rounded-xl shadow-2xl p-8 flex flex-col items-center space-y-6">
-        <h1 className="text-5xl font-bold text-gray-800 tracking-wide">
-          Pomodoro Timer
-        </h1>
+    <div className="h-full w-full bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 border border-gray-200 dark:border-gray-700 flex flex-col items-center justify-center space-y-6">
+      <h1 className="text-3xl font-bold text-gray-800 dark:text-white tracking-wide">
+        Pomodoro Timer
+      </h1>
 
-        <div className="text-6xl font-mono text-gray-900 font-extrabold p-8 bg-gray-200 rounded-full w-64 h-64 flex items-center justify-center shadow-inner">
-          {minutes.toString().padStart(2, "0")}:
-          {seconds.toString().padStart(2, "0")}
-        </div>
+      <div className="text-5xl font-mono text-gray-900 dark:text-white font-extrabold p-6 bg-gray-100 dark:bg-gray-700 rounded-full w-48 h-48 flex items-center justify-center shadow-inner">
+        {minutes.toString().padStart(2, "0")}:
+        {seconds.toString().padStart(2, "0")}
+      </div>
 
-        <div className="flex items-center space-x-4">
-          <div className="flex flex-col items-center">
-            <label className="text-sm font-medium text-gray-600 mb-2">Minutes</label>
-            <input
-              className="text-center text-xl p-3 w-20 rounded-full border-2 border-gray-300 focus:outline-none focus:ring-4 focus:ring-blue-500 transition-all duration-300"
-              type="number"
-              value={minutes}
-              min={0}
-              max={99}
-              onChange={handleMinutesChange}
-            />
-          </div>
-          <div className="text-2xl font-bold text-gray-600">:</div>
-          <div className="flex flex-col items-center">
-            <label className="text-sm font-medium text-gray-600 mb-2">Seconds</label>
-            <input
-              className="text-center text-xl p-3 w-20 rounded-full border-2 border-gray-300 focus:outline-none focus:ring-4 focus:ring-blue-500 transition-all duration-300"
-              type="number"
-              value={seconds}
-              min={0}
-              max={59}
-              onChange={handleSecondsChange}
-            />
-          </div>
+      <div className="flex items-center space-x-4">
+        <div className="flex flex-col items-center">
+          <label className="text-sm font-medium text-gray-600 dark:text-gray-300 mb-2">Minutes</label>
+          <input
+            className="text-center text-lg p-2 w-16 rounded-xl border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
+            type="number"
+            value={minutes}
+            min={0}
+            max={99}
+            onChange={handleMinutesChange}
+          />
         </div>
+        <div className="text-xl font-bold text-gray-600 dark:text-gray-300">:</div>
+        <div className="flex flex-col items-center">
+          <label className="text-sm font-medium text-gray-600 dark:text-gray-300 mb-2">Seconds</label>
+          <input
+            className="text-center text-lg p-2 w-16 rounded-xl border-2 border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
+            type="number"
+            value={seconds}
+            min={0}
+            max={59}
+            onChange={handleSecondsChange}
+          />
+        </div>
+      </div>
 
-        <div className="flex space-x-4">
-          <button
-            className="bg-green-500 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-green-600 transition-colors duration-300 transform hover:scale-105"
-            onClick={handleStart}
-          >
-            Start
-          </button>
-          <button
-            className="bg-red-500 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-red-600 transition-colors duration-300 transform hover:scale-105"
-            onClick={handleStop}
-          >
-            Stop
-          </button>
-          <button
-            className="bg-gray-500 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-gray-600 transition-colors duration-300 transform hover:scale-105"
-            onClick={handleReset}
-          >
-            Reset
-          </button>
-        </div>
+      <div className="flex space-x-3">
+        <button
+          className="bg-green-500 text-white font-semibold py-2 px-6 rounded-xl shadow-md hover:bg-green-600 transition-colors duration-200 hover:shadow-lg"
+          onClick={handleStart}
+        >
+          Start
+        </button>
+        <button
+          className="bg-red-500 text-white font-semibold py-2 px-6 rounded-xl shadow-md hover:bg-red-600 transition-colors duration-200 hover:shadow-lg"
+          onClick={handleStop}
+        >
+          Stop
+        </button>
+        <button
+          className="bg-gray-500 text-white font-semibold py-2 px-6 rounded-xl shadow-md hover:bg-gray-600 transition-colors duration-200 hover:shadow-lg"
+          onClick={handleReset}
+        >
+          Reset
+        </button>
       </div>
     </div>
   );
